@@ -66,9 +66,6 @@ public class PointControllerTest {
 				.andReturn().getResponse();
 		
 		
-		String data = jsonResponse.write(mockUserPoint).getJson();
-		System.out.println(data);
-		
 		//then
 		assertEquals(response.getContentAsString(), jsonResponse.write(mockUserPoint).getJson());
 		verify(userPointService, times(1)).createOrUpdatePoint(any(CreateOrUpdatePointRequest.class));
